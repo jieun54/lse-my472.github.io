@@ -1,10 +1,7 @@
 Introduction to R
 ================
 
-This Rmarkdown script provides a description of some of the building
-blocks we will rely on throughout this course. If you’re having trouble
-following the code below, make sure you read the required chapters in
-Wickham’s *Advanced R*.
+This Rmarkdown script provides a description of some of the building blocks we will rely on throughout this course. If you're having trouble following the code below, make sure you read the required chapters in Wickham's *Advanced R*.
 
 ### Using R as a calculator
 
@@ -36,18 +33,16 @@ exp(1)
 
 ### Objects and operators
 
-What makes R very powerful is that you can store results as “objects”
+What makes R very powerful is that you can store results as "objects"
 
 ``` r
 x <- 5
 y <- 10
 ```
 
-If you look at the `Environment` panel in your RStudio session, you can
-see that these numbers are stored in memory.
+If you look at the `Environment` panel in your RStudio session, you can see that these numbers are stored in memory.
 
-Then you can do operations with them, the same way you would do with
-numbers:
+Then you can do operations with them, the same way you would do with numbers:
 
 ``` r
 x * y
@@ -67,11 +62,7 @@ You can also modify existing objects.
 x <- x + 1
 ```
 
-Note that we’ve used the `<-` sign to assign values to objects. That’s
-the *assignment* operator. You can also use `=`, although `<-` is
-generally preferred. There’s a more technical explanation for this
-preference, but another is that this way you avoid getting confused with
-`==`, which is used to compare objects:
+Note that we've used the `<-` sign to assign values to objects. That's the *assignment* operator. You can also use `=`, although `<-` is generally preferred. There's a more technical explanation for this preference, but another is that this way you avoid getting confused with `==`, which is used to compare objects:
 
 ``` r
 2 == 2
@@ -85,8 +76,7 @@ c(1, 2, 3) == 2
 
     ## [1] FALSE  TRUE FALSE
 
-`==` is a *logical operator*, meaning it outputs `TRUE` or `FALSE`.
-Other logical operators are:
+`==` is a *logical operator*, meaning it outputs `TRUE` or `FALSE`. Other logical operators are:
 
 ``` r
 1 != 2 # not equal to
@@ -132,16 +122,14 @@ Other logical operators are:
 
 ### Data types
 
-R has many data types, but the most common ones we’ll use are:
+R has many data types, but the most common ones we'll use are:
 
-1.  numeric: `1.1`, `3`, `317`, `Inf`…
+1.  numeric: `1.1`, `3`, `317`, `Inf`...
 2.  logical: `TRUE` or `FALSE`
-3.  character: `this is a character`, `hello world!`…
-4.  factor: `Democrat`, `Republican`, `Socialist`, …
+3.  character: `this is a character`, `hello world!`...
+4.  factor: `Democrat`, `Republican`, `Socialist`, ...
 
-A small trick regarding logical values is that they correspond to `1`
-and `0`. This will come in hand to count the number of `TRUE` values in
-a vector.
+A small trick regarding logical values is that they correspond to `1` and `0`. This will come in hand to count the number of `TRUE` values in a vector.
 
 ``` r
 x <- c(TRUE, TRUE, FALSE)
@@ -156,9 +144,7 @@ sum(x)
 
     ## [1] 2
 
-There are a few special values: `NA`, which denotes a missing value, and
-`NaN`, which means Not a number. The values `Inf` and `-Inf` are
-considered numeric. `NULL` denotes a value that is undefined.
+There are a few special values: `NA`, which denotes a missing value, and `NaN`, which means Not a number. The values `Inf` and `-Inf` are considered numeric. `NULL` denotes a value that is undefined.
 
 ``` r
 0 / 0 # NaN
@@ -176,8 +162,7 @@ considered numeric. `NULL` denotes a value that is undefined.
 x <- c(1, NA, 0)
 ```
 
-Probably one of the most useful functions in R is `str`. It displays the
-internal structure of an object.
+Probably one of the most useful functions in R is `str`. It displays the internal structure of an object.
 
 ``` r
 str(x)
@@ -193,12 +178,9 @@ print(x)
 
     ## [1]  1 NA  0
 
-Note that `print` here is a function: it takes a series of arguments (in
-this case, the object `x`) and returns a value (`50`).
+Note that `print` here is a function: it takes a series of arguments (in this case, the object `x`) and returns a value (`50`).
 
-This is equivalent to just typing the name of the object in the console.
-(What’s going on behind the scenes is that R is calling the default
-function to print this object; which in this case is just `print`).
+This is equivalent to just typing the name of the object in the console. (What's going on behind the scenes is that R is calling the default function to print this object; which in this case is just `print`).
 
 ``` r
 x
@@ -206,8 +188,7 @@ x
 
     ## [1]  1 NA  0
 
-You can find out the data type for each object in `R` using the function
-`class`, or functions that start with `is.` and then the data type:
+You can find out the data type for each object in `R` using the function `class`, or functions that start with `is.` and then the data type:
 
 ``` r
 class("hello world!")
@@ -239,8 +220,7 @@ is.numeric(c(1, NA, 0))
 
     ## [1] TRUE
 
-Probably one of the most useful functions in R is `str`. It displays the
-internal structure of an object.
+Probably one of the most useful functions in R is `str`. It displays the internal structure of an object.
 
 ``` r
 str(as.factor(c("Blue", "Blue", "Red")))
@@ -250,9 +230,7 @@ str(as.factor(c("Blue", "Blue", "Red")))
 
 ### Data structures
 
-Building off of the data types we’ve learned, *data structures* combine
-multiple values into a single object. Some common data structures in `R`
-include:
+Building off of the data types we've learned, *data structures* combine multiple values into a single object. Some common data structures in `R` include:
 
 1.  vectors: sequence of values of a certain type
 2.  data frame: a table of vectors, all of the same length
@@ -260,8 +238,7 @@ include:
 
 #### Vectors
 
-We’ve already seen vectors created by **c**ombining multiple values with
-the `c` command:
+We've already seen vectors created by **c**ombining multiple values with the `c` command:
 
 ``` r
 student_names <- c("Bill", "Jane", "Sarah", "Fred", "Paul")
@@ -269,8 +246,7 @@ math_scores <- c(80, 75, 91, 67, 56)
 verbal_scores <- c(72, 90, 99, 60, 68)
 ```
 
-There are shortcuts for creating vectors with certain structures, for
-instance:
+There are shortcuts for creating vectors with certain structures, for instance:
 
 ``` r
 nums1 <- 1:100
@@ -278,12 +254,9 @@ nums2 <- seq(-10, 100, by=5) # -10, -5, 0, ..., 100
 nums3 <- seq(-10, 100, length.out=467) # 467 equally spaced numbers between -10 and 100
 ```
 
-Notice that we used `seq` to generate both `nums1` and `nums2`. The
-different behavior is controlled by which arguments (e.g. `by`,
-`length.out`) are supplied to the function `seq`.
+Notice that we used `seq` to generate both `nums1` and `nums2`. The different behavior is controlled by which arguments (e.g. `by`, `length.out`) are supplied to the function `seq`.
 
-With vectors we can carry out some of the most fundamental tasks in data
-analysis, such as descriptive statistics
+With vectors we can carry out some of the most fundamental tasks in data analysis, such as descriptive statistics
 
 ``` r
 mean(math_scores)
@@ -311,10 +284,9 @@ plot(x=math_scores, y=verbal_scores)
 text(x=math_scores, y=verbal_scores, labels=student_names)
 ```
 
-![](02-intro-to-R_files/figure-gfm/unnamed-chunk-18-1.png)<!-- -->
+![](02-intro-to-R_files/figure-markdown_github/unnamed-chunk-18-1.png)
 
-It’s easy to pull out specific entries in a vector using `[]`. For
-example,
+It's easy to pull out specific entries in a vector using `[]`. For example,
 
 ``` r
 math_scores[3]
@@ -349,8 +321,7 @@ math_scores
 
 #### Data frames
 
-Data frames allow us to combine many vectors of the same length into a
-single object.
+Data frames allow us to combine many vectors of the same length into a single object.
 
 ``` r
 students <- data.frame(student_names, math_scores, verbal_scores)
@@ -376,10 +347,7 @@ summary(students)
     ##  Sarah:1       3rd Qu.:80   3rd Qu.:90.0  
     ##                Max.   :92   Max.   :99.0
 
-Notice that `student_names` is a different class (character) than
-`math_scores` (numeric), yet a data frame combines their values into a
-single object. We can also create data frames that include new
-variables:
+Notice that `student_names` is a different class (character) than `math_scores` (numeric), yet a data frame combines their values into a single object. We can also create data frames that include new variables:
 
 ``` r
 students$final_scores <- 0
@@ -402,10 +370,7 @@ students3
 
 #### Lists
 
-Lists are an even more flexible way of combining multiple objects into a
-single object. As you will see throughout the course, we will use lists
-to store the output of our scraping steps. Using lists, we can combine
-together vectors of different lengths:
+Lists are an even more flexible way of combining multiple objects into a single object. As you will see throughout the course, we will use lists to store the output of our scraping steps. Using lists, we can combine together vectors of different lengths:
 
 ``` r
 list1 <- list(some_numbers = 1:10, some_letters = c("a", "b", "c"))
